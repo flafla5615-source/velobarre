@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-pretendard: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  color: #2b2b2b;
+  background: #fbf7f3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 92px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(246, 231, 230, 0.85), transparent 34%),
+    linear-gradient(180deg, #fffdfc 0%, #fbf7f3 42%, #ffffff 100%);
+  font-family: var(--font-pretendard);
+  color: #2b2b2b;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: rgba(199, 121, 130, 0.24);
+}
+
+.container-shell {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.section-pad {
+  padding-block: clamp(64px, 9vw, 112px);
+}
+
+.eyebrow {
+  color: #a95f68;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.display-title {
+  font-family: var(--font-display);
+  letter-spacing: 0;
+}
+
+.glass-card {
+  border: 1px solid rgba(232, 220, 215, 0.92);
+  background: rgba(255, 253, 252, 0.82);
+  box-shadow: 0 18px 50px rgba(86, 63, 55, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.premium-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 6px;
+  padding: 0 22px;
+  font-weight: 800;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.premium-button:hover {
+  transform: translateY(-2px);
+}
+
+.premium-button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(199, 121, 130, 0.32);
+  outline-offset: 3px;
+}
+
+.mock-studio {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.2) 42%),
+    linear-gradient(120deg, rgba(199, 121, 130, 0.18), rgba(43, 43, 43, 0.12)),
+    #f6e7e6;
+}
+
+.mock-studio::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 54px,
+      rgba(255, 255, 255, 0.45) 54px 56px
+    ),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.25), transparent);
+  opacity: 0.65;
+}
+
+.arch {
+  border: 1px solid rgba(255, 255, 255, 0.64);
+  border-radius: 999px 999px 8px 8px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.1));
+  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.32);
+}
+
+.person {
+  position: absolute;
+  width: 34px;
+  height: 110px;
+  transform-origin: bottom;
+}
+
+.person::before {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: rgba(73, 54, 49, 0.88);
+}
+
+.person::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 18px;
+  width: 12px;
+  height: 76px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(73, 54, 49, 0.9), rgba(199, 121, 130, 0.82));
+  box-shadow:
+    -20px 35px 0 -7px rgba(73, 54, 49, 0.74),
+    22px 34px 0 -7px rgba(73, 54, 49, 0.74);
+}
+
+.bike-wheel {
+  border: 3px solid rgba(43, 43, 43, 0.5);
+  border-radius: 999px;
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 78px;
+  }
+
+  body {
+    padding-bottom: calc(78px + env(safe-area-inset-bottom));
+  }
+
+  .container-shell {
+    width: min(100% - 28px, 560px);
+  }
+
+  .section-pad {
+    padding-block: 58px;
+  }
+}
