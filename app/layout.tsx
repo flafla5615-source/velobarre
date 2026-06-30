@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "VELOBARRE | 하루 50분, 가장 우아한 바디루틴",
+  title: "VELO BARRE | 우아한 움직임, 단단한 변화",
   description:
-    "바레와 사이클링을 결합한 프리미엄 바디 루틴 스튜디오 VELOBARRE 벨로바레의 무료체험 신청 랜딩페이지입니다.",
+    "필라테스의 섬세함과 바레의 에너지를 결합한 여성 전문 부티크 스튜디오 VELO BARRE 벨로바레입니다.",
   openGraph: {
-    title: "VELOBARRE 벨로바레",
-    description: "바레의 섬세함과 사이클의 강력함을 하나로.",
+    title: "VELO BARRE 벨로바레",
+    description: "우아한 움직임, 단단한 변화.",
     type: "website"
   }
 };

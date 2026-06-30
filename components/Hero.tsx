@@ -1,66 +1,67 @@
-import { ArrowRight, BadgeCheck, MessageCircle } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, BadgeCheck, CalendarDays } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative overflow-hidden pt-[92px]">
+    <section id="hero" className="relative overflow-hidden pt-[78px] md:pt-[92px]">
       <div className="container-shell">
-        <div className="mock-studio relative min-h-[660px] overflow-hidden rounded-[8px] border border-line shadow-soft md:min-h-[620px]">
-          <div className="absolute right-8 top-8 hidden gap-4 md:flex">
-            <div className="arch h-64 w-28" />
-            <div className="arch h-72 w-32" />
-            <div className="arch h-64 w-28" />
-          </div>
-
-          <div className="absolute bottom-12 right-[6%] hidden h-[250px] w-[430px] md:block">
-            <div className="bike-wheel absolute bottom-0 left-8 h-24 w-24" />
-            <div className="bike-wheel absolute bottom-0 right-12 h-24 w-24" />
-            <div className="absolute bottom-[70px] left-[93px] h-1 w-56 rotate-[-8deg] rounded bg-charcoal/45" />
-            <div className="person right-[155px] top-0 scale-[1.45]" />
-          </div>
-
-          <div className="absolute bottom-24 left-[50%] hidden h-[240px] w-[320px] -translate-x-1/2 md:block">
-            <div className="absolute left-0 top-20 h-1 w-80 rounded bg-rose-dark/32" />
-            <div className="person left-4 top-24 scale-90 opacity-60" />
-            <div className="person left-24 top-20 scale-100 opacity-70" />
-            <div className="person left-48 top-28 scale-90 opacity-60" />
-          </div>
-
-          <div className="relative z-10 flex min-h-[660px] flex-col justify-between px-6 py-9 md:min-h-[620px] md:px-12 md:py-14 lg:w-[56%]">
-            <div>
-              <p className="eyebrow mb-5">Premium Barre + Cycling Studio</p>
-              <h1 className="display-title text-[3.05rem] leading-[1.08] text-charcoal sm:text-[4.2rem]">
-                하루 50분,
-                <br />
-                가장 우아한 바디루틴
-              </h1>
-              <p className="mt-6 max-w-xl text-base leading-8 text-muted-text md:text-lg">
-                바레의 섬세함과 사이클의 강력함을 하나로. VELOBARRE에서 당신만의
-                바디라인, 자세, 체력을 완성하세요.
-              </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href="#trial"
-                  className="premium-button bg-rose text-white shadow-lift hover:bg-rose-dark"
-                >
-                  무료체험 신청 <ArrowRight size={18} />
-                </a>
-                <a
-                  href="#location"
-                  className="premium-button border border-taupe/60 bg-white/86 text-charcoal hover:border-rose hover:text-rose-dark"
-                >
-                  1:1 상담하기 <MessageCircle size={18} />
-                </a>
-              </div>
+        <div className="grid overflow-hidden rounded-[12px] border border-line bg-pearl shadow-soft lg:min-h-[650px] lg:grid-cols-[0.92fr_1.08fr]">
+          <div className="relative z-10 flex flex-col justify-center px-5 py-7 sm:px-7 md:px-12 md:py-14">
+            <p className="eyebrow mb-4">Women Boutique Barre Studio</p>
+            <h1 className="display-title text-[2.35rem] leading-[1.08] text-charcoal sm:text-[2.65rem] md:text-[3.35rem] lg:text-[4.35rem]">
+              우아한 움직임,
+              <br />
+              단단한 변화
+            </h1>
+            <p className="mt-5 max-w-xl text-[1rem] leading-[1.75] text-muted-text md:text-lg">
+              필라테스의 섬세함과 바레의 에너지를 결합한 여성 전문 부티크 스튜디오
+            </p>
+            <p className="mt-4 max-w-lg text-[0.98rem] leading-[1.7] text-muted-text">
+              처음이신 분도 부담 없이 시작할 수 있습니다. 발레 경험이나 뛰어난 유연성이
+              없어도 참여할 수 있습니다.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#trial"
+                className="premium-button w-full bg-rose text-white shadow-lift hover:bg-rose-dark sm:w-auto"
+              >
+                첫 체험 예약 <ArrowRight size={18} />
+              </a>
+              <a
+                href="#program"
+                className="premium-button w-full border border-taupe/60 bg-white text-charcoal hover:border-rose hover:text-rose-dark sm:w-auto"
+              >
+                시간표 보기 <CalendarDays size={18} />
+              </a>
             </div>
 
-            <div className="mt-10 flex flex-wrap items-center gap-3 text-sm font-bold text-muted-text">
-              <span className="inline-flex items-center gap-2 rounded-md bg-white/80 px-4 py-3">
-                <BadgeCheck size={17} className="text-rose-dark" />
-                신규회원 전용 혜택
+            <div className="mt-5 flex flex-wrap items-center gap-2 text-[0.9rem] font-bold text-muted-text">
+              <span className="inline-flex items-center gap-2 rounded-lg bg-blush/70 px-3.5 py-2.5">
+                <BadgeCheck size={16} className="text-rose-dark" aria-hidden="true" />
+                초보자 참여 가능
               </span>
-              <span className="inline-flex rounded-md bg-white/80 px-4 py-3">
-                체험 후 등록 시 특별 할인
+              <span className="inline-flex rounded-lg bg-blush/70 px-3.5 py-2.5">
+                소규모 맞춤 티칭
               </span>
+            </div>
+          </div>
+
+          <div className="relative mx-4 mb-4 aspect-[16/10] overflow-hidden rounded-[24px] shadow-[0_24px_80px_rgba(92,64,58,0.16)] sm:mx-6 md:aspect-[4/3] lg:m-5 lg:aspect-auto lg:min-h-[610px]">
+            <Image
+              src="/images/velobarre/hero-main.webp"
+              alt="벨로바레 부티크 바레 스튜디오 대표 이미지"
+              width={1672}
+              height={941}
+              priority
+              sizes="(max-width: 1024px) 100vw, 56vw"
+              className="h-full w-full object-cover object-[58%_center]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F1]/72 via-[#FAF7F1]/16 to-transparent lg:from-[#FAF7F1]/24" />
+            <div className="absolute bottom-4 left-4 rounded-lg bg-white/88 px-4 py-3 shadow-soft backdrop-blur">
+              <p className="display-title text-4xl leading-none text-rose">VB</p>
+              <p className="mt-1 text-sm font-extrabold text-charcoal md:text-base">
+                VELO BARRE
+              </p>
             </div>
           </div>
         </div>

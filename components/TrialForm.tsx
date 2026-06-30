@@ -1,12 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowRight, Check, Send } from "lucide-react";
 import { FormEvent, useState } from "react";
 
 const perks = [
-  "전문 강사진의 1:1 컨설팅",
-  "체형 분석 & 맞춤 프로그램 안내",
-  "체험 후 등록 시 특별 혜택"
+  "처음이신 분도 부담 없이 시작",
+  "운동 목적에 맞춘 수업 안내",
+  "체험 후 상담을 통한 루틴 추천"
 ];
 
 export default function TrialForm() {
@@ -15,119 +16,152 @@ export default function TrialForm() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    console.log("VELOBARRE trial request", Object.fromEntries(formData.entries()));
+    console.log("VELO BARRE trial request", Object.fromEntries(formData.entries()));
     setSubmitted(true);
     event.currentTarget.reset();
   }
 
   return (
     <section id="trial" className="section-pad bg-charcoal text-white">
-      <div className="container-shell grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-        <div className="lg:sticky lg:top-28">
-          <p className="eyebrow text-blush">Trial Class</p>
-          <h2 className="display-title mt-4 text-[2.6rem] leading-tight md:text-[3.7rem]">
-            지금, 당신의 변화를
-            <br />
-            경험해보세요
-          </h2>
-          <p className="mt-6 max-w-lg leading-8 text-white/72">
-            단 1회의 체험으로도 벨로바레의 차이를 느끼실 수 있습니다. 지금,
-            벨로바레의 50분을 경험해보세요.
-          </p>
-
-          <div className="mt-8 grid gap-3">
-            {perks.map((perk) => (
-              <div
-                key={perk}
-                className="flex items-center gap-3 rounded-md border border-white/12 bg-white/[0.06] px-4 py-4"
-              >
-                <Check size={19} className="text-blush" aria-hidden="true" />
-                <span className="font-bold text-white/90">{perk}</span>
-              </div>
-            ))}
+      <div className="container-shell">
+        <div className="mb-8 grid gap-5 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
+          <div>
+            <p className="eyebrow text-blush">TRIAL</p>
+            <h2 className="display-title mt-4 text-[2.1rem] leading-tight md:text-[2.9rem] lg:text-[3.7rem]">
+              처음이라도
+              <br />
+              괜찮습니다
+            </h2>
           </div>
+          <p className="max-w-2xl text-[1rem] leading-[1.75] text-white/76 lg:justify-self-end">
+            벨로바레는 누구나 자신의 속도로 우아하게 시작할 수 있는 공간입니다.
+            지금, 나를 위한 첫 움직임을 시작해보세요.
+          </p>
         </div>
 
-        <form
-          onSubmit={handleSubmit}
-          className="rounded-[8px] border border-white/12 bg-white p-5 text-charcoal shadow-lift md:p-8"
-        >
-          <div className="grid gap-5 md:grid-cols-2">
-            <label className="grid gap-2 text-sm font-extrabold" htmlFor="name">
-              이름
-              <input
-                id="name"
-                name="name"
-                required
-                className="min-h-12 rounded-md border border-line bg-ivory px-4 outline-none transition focus:border-rose"
-                placeholder="홍길동"
+        <div className="grid gap-7 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch">
+          <div className="grid gap-5">
+            <div className="relative h-[220px] overflow-hidden rounded-[12px] shadow-[0_18px_46px_rgba(0,0,0,0.22)] md:h-[520px]">
+              <Image
+                src="/images/velobarre/trial-cta.webp"
+                alt="벨로바레 첫 체험 예약을 안내하는 이미지"
+                width={1672}
+                height={941}
+                sizes="(max-width: 1024px) 100vw, 48vw"
+                className="h-full w-full object-cover object-[52%_center]"
               />
-            </label>
-            <label className="grid gap-2 text-sm font-extrabold" htmlFor="phone">
-              연락처
-              <input
-                id="phone"
-                name="phone"
-                type="tel"
-                required
-                className="min-h-12 rounded-md border border-line bg-ivory px-4 outline-none transition focus:border-rose"
-                placeholder="010-0000-0000"
-              />
-            </label>
-            <label className="grid gap-2 text-sm font-extrabold" htmlFor="date">
-              방문 희망 날짜
-              <input
-                id="date"
-                name="date"
-                type="date"
-                className="min-h-12 rounded-md border border-line bg-ivory px-4 outline-none transition focus:border-rose"
-              />
-            </label>
-            <label className="grid gap-2 text-sm font-extrabold" htmlFor="program">
-              관심 프로그램 선택
-              <select
-                id="program"
-                name="program"
-                className="min-h-12 rounded-md border border-line bg-ivory px-4 outline-none transition focus:border-rose"
-              >
-                <option>Barre + Cycling</option>
-                <option>Barre Focus</option>
-                <option>Cycling Focus</option>
-                <option>상담 후 추천</option>
-              </select>
-            </label>
-            <label className="grid gap-2 text-sm font-extrabold md:col-span-2" htmlFor="message">
-              문의사항
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                className="rounded-md border border-line bg-ivory px-4 py-3 outline-none transition focus:border-rose"
-                placeholder="체험 가능 시간, 운동 목표 등을 남겨주세요."
-              />
-            </label>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/48 via-transparent to-transparent" />
+              <div className="absolute bottom-5 left-5 right-5">
+                <p className="text-sm font-bold text-blush">First Trial</p>
+                <p className="mt-2 text-2xl font-extrabold leading-tight md:text-3xl">
+                  우아하게 시작하는
+                  <br />
+                  첫 바레 수업
+                </p>
+              </div>
+            </div>
+
+            <div className="grid gap-3">
+              {perks.map((perk) => (
+                <div
+                  key={perk}
+                  className="flex items-center gap-3 rounded-lg border border-white/12 bg-white/[0.06] px-4 py-4"
+                >
+                  <Check size={19} className="text-blush" aria-hidden="true" />
+                  <span className="font-bold text-white/90">{perk}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {submitted && (
-            <p className="mt-5 rounded-md bg-blush px-4 py-3 text-sm font-bold text-rose-dark">
-              신청이 완료되었습니다. 담당자가 곧 연락드릴 예정입니다.
-            </p>
-          )}
+          <form
+            id="trial-form"
+            onSubmit={handleSubmit}
+            className="rounded-[12px] border border-white/12 bg-white p-5 text-charcoal shadow-lift md:p-8"
+          >
+            <div className="grid gap-5 md:grid-cols-2">
+              <label className="grid gap-2 text-[0.95rem] font-extrabold" htmlFor="name">
+                이름
+                <input
+                  id="name"
+                  name="name"
+                  required
+                  className="min-h-[54px] rounded-lg border border-line bg-ivory px-4 text-base outline-none transition focus:border-rose"
+                  placeholder="홍길동"
+                />
+              </label>
+              <label className="grid gap-2 text-[0.95rem] font-extrabold" htmlFor="phone">
+                연락처
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  required
+                  className="min-h-[54px] rounded-lg border border-line bg-ivory px-4 text-base outline-none transition focus:border-rose"
+                  placeholder="010-0000-0000"
+                />
+              </label>
+              <label className="grid gap-2 text-[0.95rem] font-extrabold" htmlFor="time">
+                희망 시간대
+                <select
+                  id="time"
+                  name="time"
+                  className="min-h-[54px] rounded-lg border border-line bg-ivory px-4 text-base outline-none transition focus:border-rose"
+                >
+                  <option>상담 후 조율</option>
+                  <option>평일 오전</option>
+                  <option>평일 오후</option>
+                  <option>평일 저녁</option>
+                  <option>주말</option>
+                </select>
+              </label>
+              <label className="grid gap-2 text-[0.95rem] font-extrabold" htmlFor="classType">
+                관심 프로그램
+                <select
+                  id="classType"
+                  name="classType"
+                  className="min-h-[54px] rounded-lg border border-line bg-ivory px-4 text-base outline-none transition focus:border-rose"
+                >
+                  <option>상담 후 맞춤 추천</option>
+                  <option>BEGIN</option>
+                  <option>SIGNATURE</option>
+                  <option>SCULPT</option>
+                  <option>FLOW</option>
+                </select>
+              </label>
+              <label className="grid gap-2 text-[0.95rem] font-extrabold md:col-span-2" htmlFor="message">
+                문의사항
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  className="rounded-lg border border-line bg-ivory px-4 py-3 text-base outline-none transition focus:border-rose"
+                  placeholder="운동 목표나 문의 내용을 남겨주세요."
+                />
+              </label>
+            </div>
 
-          <button
-            type="submit"
-            aria-label="무료체험 신청하기"
-            className="premium-button mt-6 w-full bg-rose text-white shadow-lift hover:bg-rose-dark"
-          >
-            무료체험 신청하기 <Send size={18} />
-          </button>
-          <a
-            href="#location"
-            className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-md border border-line px-5 py-4 font-extrabold text-rose-dark transition hover:border-rose"
-          >
-            나에게 맞는 루틴 상담받기 <ArrowRight size={18} />
-          </a>
-        </form>
+            {submitted && (
+              <p className="mt-5 rounded-lg bg-blush px-4 py-3 text-sm font-bold text-rose-dark">
+                신청이 완료되었습니다. 담당자가 곧 연락드릴 예정입니다.
+              </p>
+            )}
+
+            <button
+              type="submit"
+              aria-label="첫 체험 예약"
+              className="premium-button mt-6 w-full bg-rose text-white shadow-lift hover:bg-rose-dark"
+            >
+              첫 체험 예약 <Send size={18} />
+            </button>
+            <a
+              href="#message"
+              className="mt-3 inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-lg border border-line px-5 py-3 font-extrabold text-rose-dark transition hover:border-rose"
+            >
+              문의하기 <ArrowRight size={18} />
+            </a>
+          </form>
+        </div>
       </div>
     </section>
   );
