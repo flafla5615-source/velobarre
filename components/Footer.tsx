@@ -17,8 +17,8 @@ export default function Footer() {
           <a href="/#program" className="hover:text-blush">
             프로그램
           </a>
-          <a href="/director" className="hover:text-blush">
-            최우린 디렉터
+          <a href="/woorin" className="hover:text-blush">
+            최우린 지부장
           </a>
           <a href="/#trial" className="hover:text-blush">
             문의

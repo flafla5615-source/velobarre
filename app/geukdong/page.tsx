@@ -249,6 +249,43 @@ export default function GeukdongPage() {
           </div>
         </section>
 
+        <section className="bg-[#211718] py-20 md:py-28">
+          <div className="mx-auto grid w-[min(1180px,calc(100%-40px))] gap-7 overflow-hidden rounded-[12px] border border-white/10 bg-white/[0.06] shadow-[0_24px_70px_rgba(0,0,0,0.24)] lg:grid-cols-[0.92fr_1.08fr]">
+            <div className="relative min-h-[360px]">
+              <Image
+                src="/images/velobarre/review-member-01.webp"
+                alt="최우린 지부장 사진 교체 영역"
+                width={1456}
+                height={1088}
+                sizes="(max-width: 1024px) 100vw, 46vw"
+                className="h-full w-full object-cover object-[52%_center]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#171313]/42 via-transparent to-transparent" />
+            </div>
+            <div className="flex flex-col justify-center p-6 md:p-10 lg:p-14">
+              <p className="text-xs font-black uppercase tracking-[0.16em] text-[#d7bd8d]">
+                BRANCH DIRECTOR
+              </p>
+              <h2 className="display-title mt-4 text-[2.1rem] leading-tight md:text-[3rem]">
+                브랜드를 만들고,
+                <br />
+                수업의 기준까지 설계합니다
+              </h2>
+              <p className="mt-6 text-[1rem] leading-[1.85] text-white/74">
+                우아필라테스를 만들고 운영해온 최우린 지부장은 여성의 몸과 움직임에
+                대한 경험을 바탕으로 벨로바레의 공간과 프로그램, 강사교육의 기준을
+                설계합니다.
+              </p>
+              <a
+                href="/woorin"
+                className="premium-button mt-8 w-full bg-white text-[#171313] hover:bg-[#f2e9dc] sm:w-fit"
+              >
+                최우린 지부장 이야기 <ArrowRight size={18} />
+              </a>
+            </div>
+          </div>
+        </section>
+
         <section id="opening" className="bg-[#f8f2e8] py-20 text-[#262322] md:py-28">
           <div className="mx-auto grid w-[min(1180px,calc(100%-40px))] gap-7 rounded-[12px] border border-[#dfcfbd] bg-white p-6 shadow-[0_18px_46px_rgba(64,25,27,0.1)] md:p-10 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>

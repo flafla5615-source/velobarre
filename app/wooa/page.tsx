@@ -85,7 +85,7 @@ function WooaHeader() {
             프로그램
           </a>
           <a href="#director" className="text-sm font-extrabold text-[#342723] hover:text-[#4a2033]">
-            디렉터
+            지부장
           </a>
           <a href="/geukdong" className="text-sm font-extrabold text-[#342723] hover:text-[#4a2033]">
             극동 허브
@@ -248,20 +248,24 @@ export default function WooaPage() {
                 우아필라테스를 만든 사람
               </h2>
               <p className="mt-6 text-[1rem] leading-[1.85] text-[#66564a]">
-                최우린 디렉터는 여성 회원의 몸과 생활을 이해하는 것에서
+                최우린 지부장은 여성 회원의 몸과 생활을 이해하는 것에서
                 우아필라테스의 브랜드와 수업 경험을 설계했습니다.
+                <br />
+                <br />
+                우아필라테스에서 쌓은 경험을 바탕으로 벨로바레와 강사교육까지
+                새로운 여성 운동 브랜드를 확장하고 있습니다.
               </p>
               <a
-                href="/director"
+                href="/woorin"
                 className="premium-button mt-8 w-full bg-[#4a2033] text-white hover:bg-[#2d1719] sm:w-fit"
               >
-                최우린 디렉터 이야기 <ArrowRight size={18} />
+                최우린 지부장 이야기 <ArrowRight size={18} />
               </a>
             </div>
             <div className="relative min-h-[360px]">
               <Image
                 src="/images/velobarre/review-member-01.webp"
-                alt="최우린 디렉터 사진 교체 영역"
+                alt="최우린 지부장 사진 교체 영역"
                 width={1456}
                 height={1088}
                 sizes="(max-width: 1024px) 100vw, 50vw"

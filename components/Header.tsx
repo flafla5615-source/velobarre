@@ -7,8 +7,8 @@ const navItems = [
   { label: "벨로바레", href: "/#hero" },
   { label: "프로그램", href: "/#program" },
   { label: "공간", href: "/#studio" },
-  { label: "최우린 디렉터", href: "/director" },
-  { label: "강사교육", href: "/director#education" },
+  { label: "최우린 지부장", href: "/woorin" },
+  { label: "강사교육", href: "/woorin#education" },
   { label: "문의", href: "/#trial" }
 ];
 
